@@ -1,0 +1,6 @@
+---
+name: 'Pandoc-Mermaid'
+description: 'Run pandoc with the mermaid-filter'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
