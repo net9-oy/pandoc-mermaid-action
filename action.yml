@@ -1,6 +1,18 @@
 ---
 name: 'Pandoc-Mermaid'
 description: 'Run pandoc with the mermaid-filter'
+inputs:
+  input-file:
+    description: 'The input file'
+    required: false
+    default: 'README.md'
+  output-file:
+    description: 'The output file'
+    required: false
+    default: 'README.pdf'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/net9-oy/pandoc-mermaid-action:main'
+  args:
+    - ${{ inputs.output-file }}
+    - ${{ inputs.input-file }}
